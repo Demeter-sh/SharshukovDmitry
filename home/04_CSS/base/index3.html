@@ -10,46 +10,38 @@
             padding: 0;
             box-sizing: border-box;
         }
+        table{
+            counter-reset: sixty-four 65;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 4em;
+        }
         td{
+            counter-increment: sixty-four -1;
             background-color: white;
             width: 100px;
             height: 100px;
+        }
+        td::before{
+            content: counter(sixty-four);
         }
         .evenBlack td:nth-child(2n + 1){
             background-color: black;
             width: 100px;
             height: 100px;
+            color: aliceblue;
         }
         .notEvenBlack td:nth-child(2n){
             background-color: black;
             width: 100px;
             height: 100px;
+            color: white;
         }
     </style>
 </head>
 <body>
     <table style="border: 10px solid;">
         <tr class="evenBlack">
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
-            <td>8</td>
-        </tr>
-        <tr class="notEvenBlack">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr class="evenBlack">
             <td></td>
             <td></td>
             <td></td>
@@ -109,6 +101,26 @@
             <td></td>
             <td></td>
         </tr>
-    </table>
+        <tr class="evenBlack">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="notEvenBlack">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+</table>
 </body>
 </html>
