@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery additional</title>
+    <style>
+        input{
+            margin-bottom: 5px;
+        }
+        .error{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Проверка пароля</h2>
+    <legend>
+        <form method="post" id="myForm" action="http://fe.it-academy.by/TestForm.php">
+            <input name="password0" type="password" id="password">
+            <label for="password">Пароль</label>
+            <br>
+            <input name="repeat_password0" type="password" id="repeat_password">
+            <label for="repeat pasword">Повторите пароль</label>
+            <br>
+            <input type="submit" value="отправить">
+        </form>
+    </legend>    
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function($){
+            $('#password').focus(function(){
+                $(this).css('backgroundColor', 'green')
+                $('#repeat_password').css('backgroundColor', 'green')
+            })
+
+            $('#myForm input').on('input', function(){
+
+                var passwordValue = $('input[name="password0"]').val();
+                var repeat_passwordValue = $('input[name="repeat_password0"]').val();
+                console.log(passwordValue)
+                console.log(repeat_passwordValue)
+
+                if(passwordValue != repeat_passwordValue & repeat_passwordValue.length > 0) {
+                    $('#repeat_password').css('backgroundColor', 'red')
+                } else{
+                    $('#repeat_password').css('backgroundColor', 'green')
+                }
+            })
+        })
+    </script>
+</body>
+</html>
