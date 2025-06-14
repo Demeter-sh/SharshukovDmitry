@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <style>
+        body{
+            height: 1000px;
+        }
+        #aaa4{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="aaa">test</div>
+    <button id="button">clic</button>
+
+    <div id="aaa2">test2</div>
+    <button id="button2">clic2</button>
+
+    <div id="aaa3">test3</div>
+    <button id="button3">clic3</button>
+
+    <div id="aaa4">test4</div>
+    <button id="button4">clic4</button>
+    
+    <!--<form action="">
+        <input type="text" name="fio">
+        <input type="submit" value="send">
+    </form>-->
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function($){
+            
+            $("#button").click(function(){
+                $("#aaa").slideToggle(),
+                $("#button").animate({
+                    width: 500
+                }, 2000)
+            });
+
+            $("#button2").on("click", function(){
+                $("#aaa2").animate({
+                    marginLeft: 200,
+
+                }, 3000, qwe)
+            });
+
+            $("#button3").click(function(){
+                $("#aaa3").slideToggle();
+            })
+
+            $("#button4").click(function(){
+                /*console.log($("#aaa4").css("backgroundColor"))*/
+                /* GETTER var smt = $("#aaa4").css("backgroundColor")*/
+                /*SETTER
+                $("#aaa4").css("backgroundColor", "blue")
+                */
+               /*Hash, если нужно несколько стилевых свойств*/
+               $("#aaa4").css(
+                    {
+                        backgroundColor: "blue",
+                        color: "yellow"
+                    }
+                );
+               
+            })
+            /*
+            window - окно браузера
+            on('scroll') - оброботчик (повесить события)
+            */
+            $(window).on('scroll', function(){
+                console.log($(this).scrollTop())
+            })
+
+            /*
+            $('form').submit(function(event){
+                
+                //event.preventDefault();
+                //console.log('form send')
+                
+                var value = $('input[type=text]').val();
+                var name = $('input[type=text]').attr('name')
+                if(value ==''){
+                    alert('enter value')
+                }
+                else{
+                    $.ajax({
+                    url: 'http://fe.it-academy.by/TestForm.php',
+                            type: "GET",
+                            data: {name: value},
+                        success: function(){
+                            alert('Load was performed.');
+                        }
+                    });
+                }
+            })*/
+
+            function qwe(){
+                $("#aaa2").animate({
+                    marginLeft: 100
+                }, 3000, function(){
+                    alert("hello");
+                });
+            }
+        })
+
+        /**
+        var btn = document.getElementById("button");
+        btn.addEventListener("click", function() {
+            alert("Hello");
+        })
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>FluidScrool</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        section{
+            height: 500px
+        }
+        section#first{
+            background-color: aqua;
+        }
+        section#second{
+            background-color: blue;
+        }
+        section#third{
+            background-color: peachpuff;
+        }
+        #top{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+        }
+        header{
+            height: 200px;
+            background-color: violet;
+            color: aliceblue;
+            text-align: center;
+            padding: 1px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+        }
+        body{
+            height: 1500px;
+            padding-top: 201px;
+        }
+    </style>
+</head>
+<body>
+
+    <header><h1>Hello</h1></header>
+
+    <ul id="menu">
+        <li><a href="#first">first</a></li>
+        <li><a href="#second">second</a></li>
+        <li><a href="#third">third</a></li>
+    </ul>
+
+    <div>
+        <section id="first"></section>
+        <div class="parallax-container">
+            <div class="parallax"><img src="https://materializecss.com/images/parallax1.jpg"></div>
+        </div>
+        <section id="second"></section>
+        <section id="third"></section>
+    </div>
+
+    <div id="top"></div>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function($){
+
+            $('.parallax').parallax();
+
+            $("#menu").on("click", "a", function (event) {
+                //отменяем стандартную бработку нажатия по ссылке
+                event.preventDefault();
+                //Забираем индефикатор бока с атрибута href
+                //запятая важна если не написать var
+                var id = $(this).attr('href');  
+                //узнаём высоту от начала страницы до блока на который ссылается якорь
+                var top = $(id).offset().top;
+                //анимируе переход на расстояние - top за 1500 мс.
+                $('body,html').animate({scrollTop: top}, 3000);  
+            })
+
+            $("#top").click(function(){
+                $("body, html").animate({scrollTop: 0}, 3000);
+            })
+
+            $(window).scroll(function(){
+                var scr = $(this).scrollTop();
+                if(scr<=100){
+                    $('#top').fadeOut();
+                }
+                else{
+                    $('#top').fadeIn();
+                }
+                console.log();
+            })
+        })
+    </script>
+</body>
+</html>

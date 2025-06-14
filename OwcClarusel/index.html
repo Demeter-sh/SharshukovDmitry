@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/owl.theme.default.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <title>Owl Carusel</title>
+    <style>
+        .owl-theme{
+            background-color: blue;
+        }
+        .aquaTheme{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="owl-carousel owl-theme">
+        <div class="item aquaTheme"><h4>1</h4></div>
+        <div class="item aquaTheme"><h4>2</h4></div>
+        <div class="item aquaTheme"><h4>3</h4></div>
+        <div class="item aquaTheme"><h4>4</h4></div>
+        <div class="item aquaTheme"><h4>5</h4></div>
+        <div class="item aquaTheme"><h4>6</h4></div>
+        <div class="item aquaTheme"><h4>7</h4></div>
+        <div class="item aquaTheme"><h4>8</h4></div>
+        <div class="item aquaTheme"><h4>9</h4></div>
+        <div class="item aquaTheme"><h4>10</h4></div>
+        <div class="item aquaTheme"><h4>11</h4></div>
+        <div class="item aquaTheme"><h4>12</h4></div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+    <script src="js/owl.carousel.js"></script>
+
+    <script>
+    $(document).ready(function(){
+        $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:1,
+    nav:true,
+    responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:5
+            }
+        }
+    })
+    }); 
+    </script>   
+
+</body>
+</html>
