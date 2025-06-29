@@ -1,0 +1,86 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.backgroundBorder {
+    background-color: grey;
+    height: 300px;
+    width: 600px;
+    background-image: url(../images/backgroundBorders/b-l.gif), url(../images/backgroundBorders/b-r.gif), url(../images/backgroundBorders/t-l.gif), url(../images/backgroundBorders/t-r.gif), url(../images/backgroundBorders/b.gif), url(../images/backgroundBorders/l.gif), url(../images/backgroundBorders/r.gif), url(../images/backgroundBorders/t.gif);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x, repeat-y, repeat-y, repeat-x;
+    background-position: bottom left, bottom right, top left, top right, bottom, left, right, top;
+    display: flex;
+    justify-content: center;
+}
+.backgroundBorder1 {
+    height: 300px;
+    width: 600px;
+    margin-top: 20px;
+    background: url(../images/backgroundBorders/b-l.gif) no-repeat bottom left, 
+                url(../images/backgroundBorders/b-r.gif) no-repeat bottom right,
+                url(../images/backgroundBorders/t-l.gif) no-repeat  top left,
+                url(../images/backgroundBorders/t-r.gif) no-repeat top right,
+                url(../images/backgroundBorders/b.gif) repeat-x bottom,
+                url(../images/backgroundBorders/l.gif) repeat-y left, 
+                url(../images/backgroundBorders/r.gif) repeat-y right, 
+                url(../images/backgroundBorders/t.gif) repeat-x top;
+    background-color: grey;
+}
+.scroll {
+    width: 92%;
+    padding-bottom: 0px;
+    margin-bottom: 20px;
+    border-bottom-width: 10px;
+    margin-top: 20px;
+    overflow-wrap: break-word;
+    scrollbar-width: none;
+    overflow: auto;
+}
+.header{
+    margin-top: 20px;
+    background-color: aqua;
+    height: 100px;
+}
+.menu{
+    background-color: aquamarine;
+    height: 300px;
+    width: 200px;
+    float: left;
+}
+.banner{
+    background-color: rgb(43, 179, 30);
+    height: 300px;
+    width: 200px;
+    float: right;
+}
+.wrap {
+    background-color: red;
+}
+.content{
+    background-color: yellow;
+}
+.clear{
+    clear: both;
+}
+.footer{
+    clear: both;
+    background-color: blueviolet;
+    height: 100px;
+}
+.flexContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.navigation {
+    background-color: rgb(218, 208, 208);
+    width: 15em;
+    float: left;
+}
+.article {
+    height: 61px;
+    width: 100%;
+    background-color: rgb(101, 93, 93);
+    margin-bottom: .2em;
+}
